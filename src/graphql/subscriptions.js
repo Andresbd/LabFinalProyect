@@ -4,12 +4,17 @@
 export const onCreateTequilera = `subscription OnCreateTequilera {
   onCreateTequilera {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -19,12 +24,17 @@ export const onCreateTequilera = `subscription OnCreateTequilera {
 export const onUpdateTequilera = `subscription OnUpdateTequilera {
   onUpdateTequilera {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -34,12 +44,17 @@ export const onUpdateTequilera = `subscription OnUpdateTequilera {
 export const onDeleteTequilera = `subscription OnDeleteTequilera {
   onDeleteTequilera {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -50,10 +65,15 @@ export const onCreateTequilas = `subscription OnCreateTequilas {
   onCreateTequilas {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -65,10 +85,15 @@ export const onUpdateTequilas = `subscription OnUpdateTequilas {
   onUpdateTequilas {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -80,10 +105,15 @@ export const onDeleteTequilas = `subscription OnDeleteTequilas {
   onDeleteTequilas {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }

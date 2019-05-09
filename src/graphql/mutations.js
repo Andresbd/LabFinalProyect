@@ -4,12 +4,17 @@
 export const createTequilera = `mutation CreateTequilera($input: CreateTequileraInput!) {
   createTequilera(input: $input) {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -19,12 +24,17 @@ export const createTequilera = `mutation CreateTequilera($input: CreateTequilera
 export const updateTequilera = `mutation UpdateTequilera($input: UpdateTequileraInput!) {
   updateTequilera(input: $input) {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -34,12 +44,17 @@ export const updateTequilera = `mutation UpdateTequilera($input: UpdateTequilera
 export const deleteTequilera = `mutation DeleteTequilera($input: DeleteTequileraInput!) {
   deleteTequilera(input: $input) {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -50,10 +65,15 @@ export const createTequilas = `mutation CreateTequilas($input: CreateTequilasInp
   createTequilas(input: $input) {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -65,10 +85,15 @@ export const updateTequilas = `mutation UpdateTequilas($input: UpdateTequilasInp
   updateTequilas(input: $input) {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -80,10 +105,15 @@ export const deleteTequilas = `mutation DeleteTequilas($input: DeleteTequilasInp
   deleteTequilas(input: $input) {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }

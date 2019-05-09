@@ -4,12 +4,17 @@
 export const getTequilera = `query GetTequilera($id: ID!) {
   getTequilera(id: $id) {
     id
-    name
+    nombre
     tequilas {
       items {
         id
         nombre
-        anio
+        color
+        aroma
+        sabor
+        desc
+        image
+        sku
       }
       nextToken
     }
@@ -24,7 +29,7 @@ export const listTequileras = `query ListTequileras(
   listTequileras(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -37,10 +42,15 @@ export const getTequilas = `query GetTequilas($id: ID!) {
   getTequilas(id: $id) {
     id
     nombre
-    anio
-    marca {
+    color
+    aroma
+    sabor
+    desc
+    image
+    sku
+    tequilera {
       id
-      name
+      nombre
       tequilas {
         nextToken
       }
@@ -57,10 +67,15 @@ export const listTequilass = `query ListTequilass(
     items {
       id
       nombre
-      anio
-      marca {
+      color
+      aroma
+      sabor
+      desc
+      image
+      sku
+      tequilera {
         id
-        name
+        nombre
       }
     }
     nextToken
