@@ -1,22 +1,34 @@
 import Auth from '@aws-amplify/auth';
-import Analytics from '@aws-amplify/analytics';
+import React, { Component } from 'react';
+import TopBar from './components/TopBar';
+import Home from './components/Home';
+import Tequileras from './components/Tequileras';
+import Search from './components/Search';
+import SearchURL from './components/BotellaUrl';
+import Historial from './components/MiHistorial';
+import { BrowserRouter, Route } from "react-router-dom";
 
 import awsconfig from './aws-exports';
 
 // retrieve temporary AWS credentials and sign requests
 Auth.configure(awsconfig);
-// send analytics events to Amazon Pinpoint
-Analytics.configure(awsconfig);
 
-const AnalyticsResult = document.getElementById('AnalyticsResult');
-const AnalyticsEventButton = document.getElementById('AnalyticsEventButton');
-let EventsSent = 0;
-AnalyticsEventButton.addEventListener('click', (evt) => {
-    Analytics.record('Amplify Tutorial Event')
-        .then( (evt) => {
-            const url = 'https://'+awsconfig.aws_mobile_analytics_app_region+'.console.aws.amazon.com/pinpoint/home/?region='+awsconfig.aws_mobile_analytics_app_region+'#/apps/'+awsconfig.aws_mobile_analytics_app_id+'/analytics/events';
-            AnalyticsResult.innerHTML = '<p>Event Submitted.</p>';
-            AnalyticsResult.innerHTML += '<p>Events sent: '+(++EventsSent)+'</p>';
-            AnalyticsResult.innerHTML += '<a href="'+url+'" target="_blank">View Events on the Amazon Pinpoint Console</a>';
-        });
-});
+
+class App extends Component {
+    render() {
+      return (
+        <div>
+          <TopBar />
+          <BrowserRouter>
+            <div>
+              <Route path='/' exact component={Home} />
+              <Route path='/sku' exact component={Search} />
+              <Route path='/sku/:sku' exact component={SearchURL} />
+              <Route path='/tequileras' component={Tequileras} />
+              <Route path='/historial' exact component={Historial} />
+            </div>
+          </BrowserRouter>
+        </div>
+      );
+    }
+  }
