@@ -1,14 +1,19 @@
 {
     "web": {
         "awscloudformation": {
-            "AuthRoleName": "labfinalapp-web-20190509124927-authRole",
-            "UnauthRoleArn": "arn:aws:iam::457545012237:role/labfinalapp-web-20190509124927-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::457545012237:role/labfinalapp-web-20190509124927-authRole",
+            "AuthRoleName": "tequilo-web-20190510094613-authRole",
+            "UnauthRoleArn": "arn:aws:iam::457545012237:role/tequilo-web-20190510094613-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::457545012237:role/tequilo-web-20190510094613-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "labfinalapp-web-20190509124927-deployment",
-            "UnauthRoleName": "labfinalapp-web-20190509124927-unauthRole",
-            "StackName": "labfinalapp-web-20190509124927",
-            "StackId": "arn:aws:cloudformation:us-east-1:457545012237:stack/labfinalapp-web-20190509124927/ca656b70-7282-11e9-8f93-0e0d0d1329e4"
+            "DeploymentBucketName": "tequilo-web-20190510094613-deployment",
+            "UnauthRoleName": "tequilo-web-20190510094613-unauthRole",
+            "StackName": "tequilo-web-20190510094613",
+            "StackId": "arn:aws:cloudformation:us-east-1:457545012237:stack/tequilo-web-20190510094613/5c252cd0-7332-11e9-85f2-0a6d3ce3777a"
+        },
+        "categories": {
+            "auth": {
+                "cognito5a59a07b": {}
+            }
         }
     }
 }
