@@ -1,19 +1,14 @@
 {
     "web": {
         "awscloudformation": {
-            "AuthRoleName": "tequilo-web-20190510094613-authRole",
-            "UnauthRoleArn": "arn:aws:iam::457545012237:role/tequilo-web-20190510094613-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::457545012237:role/tequilo-web-20190510094613-authRole",
+            "AuthRoleName": "amplify-js-app-web-20190510115106-authRole",
+            "UnauthRoleArn": "arn:aws:iam::457545012237:role/amplify-js-app-web-20190510115106-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::457545012237:role/amplify-js-app-web-20190510115106-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "tequilo-web-20190510094613-deployment",
-            "UnauthRoleName": "tequilo-web-20190510094613-unauthRole",
-            "StackName": "tequilo-web-20190510094613",
-            "StackId": "arn:aws:cloudformation:us-east-1:457545012237:stack/tequilo-web-20190510094613/5c252cd0-7332-11e9-85f2-0a6d3ce3777a"
-        },
-        "categories": {
-            "auth": {
-                "cognito5a59a07b": {}
-            }
+            "DeploymentBucketName": "amplify-js-app-web-20190510115106-deployment",
+            "UnauthRoleName": "amplify-js-app-web-20190510115106-unauthRole",
+            "StackName": "amplify-js-app-web-20190510115106",
+            "StackId": "arn:aws:cloudformation:us-east-1:457545012237:stack/amplify-js-app-web-20190510115106/ce6af570-7343-11e9-aa7b-0e07a69c7d52"
         }
     }
 }

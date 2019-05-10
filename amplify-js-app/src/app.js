@@ -7,6 +7,10 @@ import SearchURL from './components/BotellaUrl';
 import Historial from './components/MiHistorial';
 import { BrowserRouter, Route } from "react-router-dom";
 
+import Amplify, { Auth } from 'aws-amplify';
+import awsmobile from './aws-exports';
+Amplify.configure(awsmobile);
+
 class App extends Component {
   render() {
     return (
