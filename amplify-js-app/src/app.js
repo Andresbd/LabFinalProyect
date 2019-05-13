@@ -12,13 +12,13 @@ import awsmobile from './aws-exports';
 Amplify.configure(awsmobile);
 
 class Authentication extends Component {
-  signIn() {
+  signIn(username, pw) {
     try {
       Auth.currentAuthenticatedUser({
         bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
     }).then(user => console.log(user))
     .catch(err => console.log(err));
-      const user = Auth.signIn("anbudiaz@gmail.com", "Dlaria#1");
+      const user = Auth.signIn(username, pw);
       console.log(user);
     } catch (err) {
       if (err.code === 'UserNotConfirmedException') {
@@ -42,7 +42,7 @@ class Authentication extends Component {
   render() {
     return(
       <div>
-        <h1>Hola {this.signIn()}</h1>
+        <h1>Hola {this.signIn("yo", "tu")}</h1>
       </div>
     );
   }
