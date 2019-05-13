@@ -18,7 +18,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "aws s3 sync build/ s3://tequilo-20190510095541-hostingbucket-web",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -26,7 +25,7 @@
     "extends": "react-app"
   },
   "homepage": 
-  "http://tequilo-20190510095541-hostingbucket-web.s3-website-us-east-1.amazonaws.com/",
+  "http://amplify-js-app-20190510115150-hostingbucket-web.s3-website-us-east-1.amazonaws.com/",
   "browserslist": [
     ">0.2%",
     "not dead",
