@@ -1,6 +1,6 @@
 import Dispatcher from '../dispatchers';
 import ActionTypes from '../constants';
-import API from '../utils/index';
+import GRAPI from '../utils/index';
 
 class TequilioActions {
     getTequileros() {
@@ -8,7 +8,7 @@ class TequilioActions {
             actionType: ActionTypes.API_CALL
         });
 
-        API.getTequileros();
+        GRAPI.getTequileros();
     }
 
     receiveTequileros(payload) {
@@ -30,7 +30,7 @@ class TequilioActions {
             actionType: ActionTypes.API_CALL
         });
 
-        API.getTequileroTequilas(tequilero);
+        GRAPI.getTequileroTequilas(tequilero);
     }
 
     receiveTequilerosTequilas(payload) {
@@ -38,22 +38,15 @@ class TequilioActions {
             actionType: ActionTypes.API_TT_RETURN,
             payload: payload
         });
+        console.log(payload);
     }
 
-    getSkuBotella(sku, user, pwd) {
+    getSkuBotella(sku) {
         Dispatcher.dispatch({
             actionType: ActionTypes.API_CALL
         });
 
-        API.getBotella(sku, user, pwd);
-    }
-
-    getSkuBotellaInsecure(sku) {
-        Dispatcher.dispatch({
-            actionType: ActionTypes.API_CALL
-        });
-
-        API.getBotellaInsecure(sku);
+        GRAPI.getBotella(sku);
     }
 
     receiveSkuBotella(payload) {
@@ -61,6 +54,7 @@ class TequilioActions {
             actionType: ActionTypes.API_SKU_RETURN,
             payload: payload
         });
+        console.log(payload);
     }
 
     getHistorial(user, pwd) {
@@ -68,7 +62,7 @@ class TequilioActions {
             actionType: ActionTypes.API_CALL
         });
 
-        API.getHistorial(user, pwd);
+        GRAPI.getHistorial(user);
     }
 
     receiveHistorial(payload) {
@@ -76,6 +70,7 @@ class TequilioActions {
             actionType: ActionTypes.API_HS_RETURN,
             payload: payload
         });
+        console.log(payload);
     }
 }
 

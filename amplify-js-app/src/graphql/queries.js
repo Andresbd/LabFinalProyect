@@ -14,6 +14,7 @@ export const getTequilera = `query GetTequilera($id: ID!) {
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -47,6 +48,7 @@ export const getTequilas = `query GetTequilas($id: ID!) {
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -72,10 +74,51 @@ export const listTequilass = `query ListTequilass(
       sabor
       desc
       image
+      fechaProduccion
       sku
       tequilera {
         id
         nombre
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getHistorial = `query GetHistorial($id: ID!) {
+  getHistorial(id: $id) {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const listHistorials = `query ListHistorials(
+  $filter: ModelHistorialFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHistorials(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
       }
     }
     nextToken

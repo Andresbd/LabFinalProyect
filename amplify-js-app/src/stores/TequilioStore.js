@@ -1,6 +1,7 @@
 import { EventEmitter } from 'events';
 import Dispatcher from '../dispatchers';
-import Constants from '../utils';
+import Constants from '../constants';
+
 
 let botella = {};
 let historial = [];
@@ -46,7 +47,7 @@ class TequilioStore extends EventEmitter {
     
     apiTqReturn(payload) {
         console.log('API TQ Returned');
-        tequilerosNames = payload.tequileros;
+        tequilerosNames = payload;
         this.emit(Constants.TEQUILEROS_CHANGE);
     }
 

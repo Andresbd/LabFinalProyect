@@ -6,13 +6,13 @@
 		}
 	},
 	"auth": {
-		"cognitoebee7deb": {
+		"cognito6e4a5cda": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"api": {
-		"deployLab": {
+		"tequilioAPI": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {

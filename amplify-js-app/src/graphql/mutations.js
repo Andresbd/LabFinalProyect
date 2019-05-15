@@ -14,6 +14,7 @@ export const createTequilera = `mutation CreateTequilera($input: CreateTequilera
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -34,6 +35,7 @@ export const updateTequilera = `mutation UpdateTequilera($input: UpdateTequilera
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -54,6 +56,7 @@ export const deleteTequilera = `mutation DeleteTequilera($input: DeleteTequilera
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -70,6 +73,7 @@ export const createTequilas = `mutation CreateTequilas($input: CreateTequilasInp
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -90,6 +94,7 @@ export const updateTequilas = `mutation UpdateTequilas($input: UpdateTequilasInp
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -110,6 +115,7 @@ export const deleteTequilas = `mutation DeleteTequilas($input: DeleteTequilasInp
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -117,6 +123,72 @@ export const deleteTequilas = `mutation DeleteTequilas($input: DeleteTequilasInp
       tequilas {
         nextToken
       }
+    }
+  }
+}
+`;
+export const createHistorial = `mutation CreateHistorial($input: CreateHistorialInput!) {
+  createHistorial(input: $input) {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const updateHistorial = `mutation UpdateHistorial($input: UpdateHistorialInput!) {
+  updateHistorial(input: $input) {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const deleteHistorial = `mutation DeleteHistorial($input: DeleteHistorialInput!) {
+  deleteHistorial(input: $input) {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
     }
   }
 }

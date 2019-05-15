@@ -1,3 +1,64 @@
+/** Amplify API **/
+import { API, graphqlOperation } from 'aws-amplify';
+import { getTequilera, listTequileras, listTequilass, listHistorials } from '../graphql/queries';
+import TequilioActions from '../actions/TequilioActions';
+
+class GRAPI {
+    async getTequileros() {
+        try {
+            const result = await API.graphql(graphqlOperation(listTequileras));
+            TequilioActions.receiveTequileros(result.data.listTequileras.items);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async getTequileroTequilas(tequilero) {
+        try {
+            const input = { id: tequilero };
+            const result = await API.graphql(graphqlOperation(getTequilera, input));
+            TequilioActions.receiveTequilerosTequilas(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async getBotella(sku) {
+        try {
+            const input = {
+                "filter": {
+                    "sku": {
+                        "eq": sku
+                    }
+                }
+            };
+            const result = await API.graphql(graphqlOperation(listTequilass, {input}));
+            TequilioActions.receiveSkuBotella(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async getHistorial(user) {
+        try {
+            const input = {
+                "filter": {
+                    "user" : {
+                        "eq": user
+                    }
+                }
+            };
+            const result = await API.graphql(graphqlOperation(listHistorials, {input}));
+            TequilioActions.receiveHistorial(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
+
+export default new GRAPI();
+
+/* OLD API
 import TequilioActions from '../actions/TequilioActions';
 
 var request = require('superagent');
@@ -71,4 +132,4 @@ class API {
     }
 }
 
-export default new API();
+export default new API(); */

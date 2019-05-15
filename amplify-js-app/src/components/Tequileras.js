@@ -78,6 +78,7 @@ class Tequileras extends React.Component {
     render() {
         const { classes } = this.props;
         const { tequileros } = this.state;
+        console.log(tequileros);
 
         return (
             <main className={classes.content}>
@@ -97,8 +98,8 @@ class Tequileras extends React.Component {
                         variant="outlined"
                     >
                         {tequileros.map(value => (
-                            <MenuItem key={value} value={value}>
-                                {value}
+                            <MenuItem key={value.nombre} value={value.nombre}>
+                                {value.nombre}
                             </MenuItem>
                         ))}
                     </TextField>

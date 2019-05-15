@@ -1,9 +1,9 @@
 {
-    "AppSyncApiName": "deployLab",
+    "AppSyncApiName": "tequilioAPI",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authcognitoebee7deb",
+            "authcognito6e4a5cda",
             "Outputs.UserPoolId"
         ]
     }

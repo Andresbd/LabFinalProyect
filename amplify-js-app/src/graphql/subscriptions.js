@@ -14,6 +14,7 @@ export const onCreateTequilera = `subscription OnCreateTequilera {
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -34,6 +35,7 @@ export const onUpdateTequilera = `subscription OnUpdateTequilera {
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -54,6 +56,7 @@ export const onDeleteTequilera = `subscription OnDeleteTequilera {
         sabor
         desc
         image
+        fechaProduccion
         sku
       }
       nextToken
@@ -70,6 +73,7 @@ export const onCreateTequilas = `subscription OnCreateTequilas {
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -90,6 +94,7 @@ export const onUpdateTequilas = `subscription OnUpdateTequilas {
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -110,6 +115,7 @@ export const onDeleteTequilas = `subscription OnDeleteTequilas {
     sabor
     desc
     image
+    fechaProduccion
     sku
     tequilera {
       id
@@ -117,6 +123,72 @@ export const onDeleteTequilas = `subscription OnDeleteTequilas {
       tequilas {
         nextToken
       }
+    }
+  }
+}
+`;
+export const onCreateHistorial = `subscription OnCreateHistorial {
+  onCreateHistorial {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onUpdateHistorial = `subscription OnUpdateHistorial {
+  onUpdateHistorial {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onDeleteHistorial = `subscription OnDeleteHistorial {
+  onDeleteHistorial {
+    id
+    user
+    fechaCompra
+    tequilas {
+      items {
+        id
+        nombre
+        color
+        aroma
+        sabor
+        desc
+        image
+        fechaProduccion
+        sku
+      }
+      nextToken
     }
   }
 }

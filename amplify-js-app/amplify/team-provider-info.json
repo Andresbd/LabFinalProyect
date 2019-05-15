@@ -12,7 +12,8 @@
         },
         "categories": {
             "auth": {
-                "cognitoebee7deb": {}
+                "cognitoebee7deb": {},
+                "cognito6e4a5cda": {}
             }
         }
     }
