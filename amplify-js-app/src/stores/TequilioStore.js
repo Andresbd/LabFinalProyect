@@ -67,7 +67,7 @@ class TequilioStore extends EventEmitter {
 
     apiTtReturn(data) {
         console.log('API TT Returned');
-        tequilas = data.tequilas;
+        tequilas = data;
         this.emit(Constants.BOTELLAS_CHANGE);
     }
 
@@ -76,7 +76,8 @@ class TequilioStore extends EventEmitter {
     }
 
     apiSkuReturn(result) {
-        botella = result.botella;
+        console.log('API SKU Returned');
+        botella = result;
         this.emit(Constants.ONE_BOTELLA_CHANGE);
     }
     
@@ -85,7 +86,8 @@ class TequilioStore extends EventEmitter {
     }
 
     apiHsReturn(data) {
-        historial = data.historial;
+        console.log('API HS Returned');
+        historial = data;
         this.emit(Constants.HISTORIAL_CHANGE);
     }
 

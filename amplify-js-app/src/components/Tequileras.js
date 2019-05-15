@@ -78,7 +78,6 @@ class Tequileras extends React.Component {
     render() {
         const { classes } = this.props;
         const { tequileros } = this.state;
-        console.log(tequileros);
 
         return (
             <main className={classes.content}>

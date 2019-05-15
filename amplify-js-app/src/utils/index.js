@@ -1,7 +1,61 @@
 /** Amplify API **/
 import { API, graphqlOperation } from 'aws-amplify';
-import { getTequilera, listTequileras, listTequilass, listHistorials } from '../graphql/queries';
+import { listTequilass } from '../graphql/queries';
 import TequilioActions from '../actions/TequilioActions';
+
+const listTequileras = `query ListTequileras(
+    $filter: ModelTequileraFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTequileras(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        nombre
+        tequilas {
+          items { 
+            nombre 
+            color
+            aroma
+            sabor
+            desc
+            image
+            fechaProduccion
+          }
+        }
+      }
+      nextToken
+    }
+  }
+  `;
+
+  const listHistorials = `query ListHistorials(
+    $filter: ModelHistorialFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listHistorials(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        user
+        fechaCompra
+        tequilas {
+          items {
+              nombre
+              color
+              aroma
+              sabor
+              desc
+              image
+              fechaProduccion
+              sku
+          }
+        }
+      }
+      nextToken
+    }
+  }
+  `;
 
 class GRAPI {
     async getTequileros() {
@@ -15,9 +69,15 @@ class GRAPI {
 
     async getTequileroTequilas(tequilero) {
         try {
-            const input = { id: tequilero };
-            const result = await API.graphql(graphqlOperation(getTequilera, input));
-            TequilioActions.receiveTequilerosTequilas(result);
+            const input = {
+                "filter": {
+                    "nombre": {
+                        "eq": tequilero
+                    }
+                }
+            };
+            const result = await API.graphql(graphqlOperation(listTequileras, input));
+            TequilioActions.receiveTequilerosTequilas(result.data.listTequileras.items[0].tequilas.items);
         } catch (error) {
             console.error(error);
         }
@@ -32,8 +92,9 @@ class GRAPI {
                     }
                 }
             };
-            const result = await API.graphql(graphqlOperation(listTequilass, {input}));
-            TequilioActions.receiveSkuBotella(result);
+            const result = await API.graphql(graphqlOperation(listTequilass, input));
+            console.log(result.data.listTequilass.items[0]);
+            TequilioActions.receiveSkuBotella(result.data.listTequilass.items[0]);
         } catch (error) {
             console.error(error);
         }
@@ -48,8 +109,8 @@ class GRAPI {
                     }
                 }
             };
-            const result = await API.graphql(graphqlOperation(listHistorials, {input}));
-            TequilioActions.receiveHistorial(result);
+            const result = await API.graphql(graphqlOperation(listHistorials, input));
+            TequilioActions.receiveHistorial(result.data.listHistorials.items[0].tequilas.items);
         } catch (error) {
             console.error(error);
         }

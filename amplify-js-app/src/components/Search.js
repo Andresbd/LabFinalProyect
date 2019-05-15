@@ -51,8 +51,6 @@ class Search extends React.Component {
 
         this.state = {
             sku: '',
-            user: '',
-            pwd: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -65,22 +63,15 @@ class Search extends React.Component {
             case 'sku':
                 newState.sku = event.target.value;
                 break;
-            case 'user':
-                newState.user = event.target.value;
-                break;
-            case 'pwd':
-                newState.pwd = event.target.value;
-                break;
             default:
                 alert('Stop this');
         }
-        console.log(newState);
         this.setState(newState);
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        TequilioActions.getSkuBotella(this.state.sku, this.state.user, this.state.pwd);
+        TequilioActions.getSkuBotella(this.state.sku);
     }
 
     render() {
@@ -102,28 +93,6 @@ class Search extends React.Component {
                             className={classes.textField}
                             name="sku"
                             inputProps={{ maxLength: 10 }}
-                        />
-                        <Typography variant="h6" color="inherit" className={classes.title}>
-                            Por favor inicia sesión para buscar
-                        </Typography>
-                        <TextField
-                            required
-                            id="user"
-                            label="Username"
-                            className={classes.textField}
-                            value={this.state.user}
-                            onChange={this.handleChange}
-                            name="user"
-                        />
-                        <TextField
-                            required
-                            id="pwd"
-                            label="Password"
-                            type="password"
-                            className={classes.textField}
-                            value={this.state.pwd}
-                            onChange={this.handleChange}
-                            name="pwd"
                         />
                         <Button type="submit" variant="contained" color="secondary" className={classes.submit}>
                             Search

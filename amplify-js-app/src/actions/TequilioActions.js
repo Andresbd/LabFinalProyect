@@ -57,7 +57,7 @@ class TequilioActions {
         console.log(payload);
     }
 
-    getHistorial(user, pwd) {
+    getHistorial(user) {
         Dispatcher.dispatch({
             actionType: ActionTypes.API_CALL
         });
@@ -68,9 +68,8 @@ class TequilioActions {
     receiveHistorial(payload) {
         Dispatcher.dispatch({
             actionType: ActionTypes.API_HS_RETURN,
-            payload: payload
+            payload: payload,
         });
-        console.log(payload);
     }
 }
 

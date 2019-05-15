@@ -84,16 +84,16 @@ class Botellas extends React.Component {
                         {tequilera}
                     </Typography>
                     {tequilas.map(tequila => (
-                        <ExpansionPanel key={tequila.marca} expanded={expanded === tequila.marca} onChange={this.handleChange(tequila.marca)}>
+                        <ExpansionPanel key={tequila.nombre} expanded={expanded === tequila.nombre} onChange={this.handleChange(tequila.nombre)}>
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                                <Typography className={classes.heading}>{tequila.marca}</Typography>
-                                <Typography className={classes.secondaryHeading}>{tequila.description.color}</Typography>
+                                <Typography className={classes.heading}>{tequila.nombre}</Typography>
+                                <Typography className={classes.secondaryHeading}>{tequila.color}</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
-                                <Typography>Color: {tequila.description.color}</Typography>
-                                <Typography>Aroma: {tequila.description.aroma}</Typography>
-                                <Typography>Taste: {tequila.description.taste}</Typography>
-                                <Typography>Descripcion: {tequila.description.text}</Typography>
+                                <Typography>Color: {tequila.color}</Typography>
+                                <Typography>Aroma: {tequila.aroma}</Typography>
+                                <Typography>Taste: {tequila.sabor}</Typography>
+                                <Typography>Descripcion: {tequila.desc}</Typography>
                             </ExpansionPanelDetails>
                         </ExpansionPanel>
                     ))}

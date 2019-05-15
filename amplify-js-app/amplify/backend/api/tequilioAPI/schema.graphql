@@ -14,10 +14,11 @@ type Tequilas @model {
   fechaProduccion: String!
   sku: String!
   tequilera: Tequilera @connection(name: "TequilasPost")
+  belongs: Historial @connection(name: "TequilasHistorial")
 }
 type Historial @model {
   id: ID!
   user: String!
   fechaCompra: String!
-  tequilas: [Tequilas] @connection(name: "TequilasPost")
+  tequilas: [Tequilas] @connection(name: "TequilasHistorial")
 }

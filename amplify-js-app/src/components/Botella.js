@@ -81,13 +81,14 @@ class Botella extends React.Component {
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    {botella.marca}
+                                    {botella.nombre}
                                 </Typography>
                                 <Typography component="p">
-                                    Descripción de la botella: Tiene un color {botella.description.color}, 
-                                    un aroma {botella.description.aroma}, un sabor {botella.description.taste}.
-                                    {botella.description.text}
-                                    SKU: {botella.sku}
+                                    Descripción de la botella: Tiene un color {botella.color}, 
+                                    un aroma {botella.aroma}, un sabor {botella.sabor}.
+                                    {botella.desc}
+                                    <br />SKU: {botella.sku}
+                                    <br />Fecha de producción: {botella.fechaProduccion}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

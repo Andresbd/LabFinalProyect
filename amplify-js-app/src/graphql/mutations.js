@@ -82,6 +82,14 @@ export const createTequilas = `mutation CreateTequilas($input: CreateTequilasInp
         nextToken
       }
     }
+    belongs {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -103,6 +111,14 @@ export const updateTequilas = `mutation UpdateTequilas($input: UpdateTequilasInp
         nextToken
       }
     }
+    belongs {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -120,6 +136,14 @@ export const deleteTequilas = `mutation DeleteTequilas($input: DeleteTequilasInp
     tequilera {
       id
       nombre
+      tequilas {
+        nextToken
+      }
+    }
+    belongs {
+      id
+      user
+      fechaCompra
       tequilas {
         nextToken
       }

@@ -82,6 +82,14 @@ export const onCreateTequilas = `subscription OnCreateTequilas {
         nextToken
       }
     }
+    belongs {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -103,6 +111,14 @@ export const onUpdateTequilas = `subscription OnUpdateTequilas {
         nextToken
       }
     }
+    belongs {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -120,6 +136,14 @@ export const onDeleteTequilas = `subscription OnDeleteTequilas {
     tequilera {
       id
       nombre
+      tequilas {
+        nextToken
+      }
+    }
+    belongs {
+      id
+      user
+      fechaCompra
       tequilas {
         nextToken
       }

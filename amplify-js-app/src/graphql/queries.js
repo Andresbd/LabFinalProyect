@@ -57,6 +57,14 @@ export const getTequilas = `query GetTequilas($id: ID!) {
         nextToken
       }
     }
+    belongs {
+      id
+      user
+      fechaCompra
+      tequilas {
+        nextToken
+      }
+    }
   }
 }
 `;
@@ -79,6 +87,11 @@ export const listTequilass = `query ListTequilass(
       tequilera {
         id
         nombre
+      }
+      belongs {
+        id
+        user
+        fechaCompra
       }
     }
     nextToken

@@ -1,0 +1,29 @@
+# Use this in case API needs to be configured again to fill dbs.
+mutation t1 {
+  createTequilera(input: {
+    nombre: "Destilados Gutierrez"
+  }) {
+    id
+    nombre
+  }
+}
+
+mutation b1 {
+  createTequilas(input: {
+    nombre: "Tequila Padilla Añejo"
+    color: "Marron"
+    aroma: "Uvas"
+    sabor: "Dulce con toque de madera."
+    desc: "Una delicia, se disfruta más caliente."
+    image: "https://cdn.shopify.com/s/files/1/2705/3390/products/Yakult_PZ_54ea270c-d3a8-4afd-a798-fc607d7f8ba3_512x.png?v=1532829318"
+    fechaProduccion: "2019-01-02"
+    sku: "desgut234"
+    tequilasTequileraId: "9da51984-811b-4a65-9915-9f5b28d5bca2"
+  }) {
+    id
+    nombre
+    tequilera {
+      nombre
+    }
+  }
+}
