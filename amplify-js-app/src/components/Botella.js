@@ -83,7 +83,7 @@ class Botella extends React.Component {
                                 <Typography gutterBottom variant="h5" component="h2">
                                     {botella.nombre}
                                 </Typography>
-                                <Typography component="p">
+                                <Typography id="test" component="p">
                                     Descripción de la botella: Tiene un color {botella.color}, 
                                     un aroma {botella.aroma}, un sabor {botella.sabor}.
                                     {botella.desc}

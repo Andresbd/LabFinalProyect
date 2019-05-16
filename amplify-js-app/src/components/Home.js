@@ -97,7 +97,7 @@ class Home extends React.Component {
         const maxSteps = steps.length;
 
         return (
-            <main className={classes.content}>
+            <main id="pruebaschidas" className={classes.content}>
                 <div className={classes.toolbar}>
                 <Typography className={classes.title} variant="h3" color="inherit">
                     Tequila Tres Generaciones

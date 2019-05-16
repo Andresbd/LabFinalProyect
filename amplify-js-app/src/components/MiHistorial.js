@@ -64,7 +64,7 @@ class MiHistorial extends React.Component {
 
         return (
             <main className={classes.content}>
-                <div className={classes.toolbar}>
+                <div id="prueba" className={classes.toolbar}>
                     <Typography variant="h5" color="inherit" className={classes.title}>
                         Ver tu historial de botellas
                     </Typography>
